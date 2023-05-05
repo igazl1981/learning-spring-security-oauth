@@ -1,0 +1,38 @@
+POST http://localhost:18081/realms/igazl-learning/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=learning-spring-security&username=user&password=12345
+
+###
+
+POST http://localhost:18081/realms/igazl-learning/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=learning-spring-security&username=admin&password=12345
+
+###
+
+POST http://localhost:18081/realms/igazl-learning/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token&client_id=learning-spring-security&refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyN2RjYWI3Mi1hMDA5LTQ2YzgtYjdkYi0xZDM2MTNhYTNhNzUifQ.eyJleHAiOjE2ODMzMDg5NDQsImlhdCI6MTY4MzMwNzE0NCwianRpIjoiMzJkZmIxY2MtYzYyYy00ZmE0LTk2YzctNGZiMzYzOWY0MGRlIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDoxODA4MS9yZWFsbXMvaWdhemwtbGVhcm5pbmciLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjE4MDgxL3JlYWxtcy9pZ2F6bC1sZWFybmluZyIsInN1YiI6IjlkMjAxZTI3LTE3YTQtNGViYS1iNjFlLTljMDQzNzU1ZWFhNSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJsZWFybmluZy1zcHJpbmctc2VjdXJpdHkiLCJzZXNzaW9uX3N0YXRlIjoiMzRlNzE3YTMtNmRiNy00NjZjLWFhMGMtYmMyZDA4MDQ0NzBkIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiMzRlNzE3YTMtNmRiNy00NjZjLWFhMGMtYmMyZDA4MDQ0NzBkIn0.-oVtqjzMzcoIeGc6-KqGHiEBbCt5TXseN7hmkCN4N1A
+
+###
+
+GET http://localhost:8081/api/test/anonymous
+###
+
+GET http://localhost:8081/api/test/user
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost:8081/api/test/admin
+Authorization: Bearer {{token}}
+
+###
+
+GET http://localhost:8081/api/test/admin/method
+Authorization: Bearer {{token}}
+
+
